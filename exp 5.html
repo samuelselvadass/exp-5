@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Simple Calculator</title>
+<style>
+*{ margin: 0;
+}
+.calculator{ width: 100%; height: 700px; display: flex;
+justify-content: center; align-items: center;
+}
+.innerdiv{ width: 800px; height: 340px; padding: 30px;
+background-color: #ebebeb; border: 1px solid #b5b5b5;
+}
+h1{
+width: 100%; padding: 20px 0px; text-align: center;
+}
+input{ width: 43%;
+height: 6px;
+font-size: 16px; padding: 20px; margin: 20px 0px; margin-right: 10px; border-radius: 8px;
+border: 2px solid #cdcbcb;
+}
+button{ width: 21%; height: 40px;
+font-size: 16px; color: white;
+background-color: #3473ac; border: 1px solid #306da6; border-radius: 5px; margin: 20px 0px;
+margin-right: 35px;
+}
+.result{ width: 67%;
+background-color: #ebebeb; margin-right: 36px;
+}
+.clearbtn{
+background-color: #c63333; border: 1px solid #a82828; margin-right: 0px;
+}
+</style>
+<script> function add(){
+var a = parseInt(document.getElementById('valueOfA').value); var b = parseInt(document.getElementById('valueOfB').value); document.getElementById('result').value = a+b;
+}
+function sub(){
+var a = parseInt(document.getElementById('valueOfA').value); var b = parseInt(document.getElementById('valueOfB').value); document.getElementById('result').value = a-b;
+}
+function div(){
+var a = parseInt(document.getElementById('valueOfA').value); var b = parseInt(document.getElementById('valueOfB').value); document.getElementById('result').value = a/b;
+}
+function mul(){
+var a = parseInt(document.getElementById('valueOfA').value); var b = parseInt(document.getElementById('valueOfB').value);
+document.getElementById('result').value = a*b;
+}
+function clearbtn(){ document.getElementById('valueOfA').value = ""; document.getElementById('valueOfB').value = ""; document.getElementById('result').value = "";
+}
+</script>
+</head>
+<body>
+<div class="calculator">
+<div class="innerdiv">
+<h1>Simple Calculator</h1>
+<input type="text" id="valueOfA" placeholder="NUMBER e.g. 1337">
+<input type="text" id="valueOfB" placeholder="NUMBER e.g. 2108"><br>
+<button onclick="add()">+ Add</button>
+<button onclick="sub()">- Subtract</button>
+<button onclick="div()">/ Divide</button>
+<button onclick="mul()" style="margin-right: 0px;">* Multiply</button><br>
+<input type="text" id="result" class="result" placeholder="Result" readonly>
+<button onclick="clearbtn()" class="clearbtn">Clear</button>
+</div>
+</div>
+</body>
+</html>
